@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# DevSavvy Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to DevSavvy Chatbot, your ultimate coding companion! This innovative application combines the power of Flask and SQLite on the backend with the dynamic capabilities of React.js on the frontend to provide you with an intuitive and efficient developer chatbot experience.
 
-## Available Scripts
+## Features
+- **Smart Code Suggestions**: Get instant code suggestions and solutions tailored to your queries.
+- **Interactive Chat Interface**: Engage in a seamless conversation with our intelligent chatbot.
+- **Quick Code Retrieval**: Access code snippets and resources with ease, directly within the chat interface.
+- **Responsive Design**: Enjoy a smooth user experience across devices, thanks to our responsive design.
 
-In the project directory, you can run:
+## How to Use
+1. Clone the repository to your local machine.
+2. Install dependencies for both the backend (Flask) and frontend (React.js):
+   ```bash
+   # Backend (Flask)
+   pip install -r requirements.txt
+   
+   # Frontend (React.js)
+   cd frontend
+   npm install
+3. Run the Flask backend server using `python bot.py`.
+4. Start the React.js frontend server using `npm start`.
+5. Access the chatbot interface in your browser and start interacting with DevSavvy!
 
-### `npm start`
+## Technologies Used
+- **Backend**: Flask, SQLite
+- **Frontend**: React.js, Axios
+- **Other Tools**: Hugging Face Transformers (for NLP), Flask-CORS (for CORS support)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Feedback and Contributions
+We welcome any feedback or contributions to make DevSavvy even better! If you have any suggestions, bug reports, or feature requests, please don't hesitate to open an issue or submit a pull request on GitHub.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let's code smarter together with DevSavvy Chatbot!
+```bash
+This README includes commands to install dependencies for both the backend and frontend of the application. Adjust the commands as needed to match your project structure.
