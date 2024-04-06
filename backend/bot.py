@@ -7,14 +7,11 @@ app = Flask(__name__)
 CORS(app)
 
 # Load pre-trained GPT-2 model and tokenizer
-model_name = "gpt2-medium"
+model_name = "gpt2-large"  # Change to a larger model like "gpt2-large" or "gpt2-xl"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name)
 
-# Maximum length for each chunk of response
-MAX_CHUNK_LENGTH = 200
-
-CODING_CONTEXT = "I am an AI assistant specializing in providing coding solutions and explanations. I will respond to inquiries related to programming languages, algorithms, data structures, software development, and coding best practices. If the question is not coding-related, I will politely mention that I cannot assist with non-coding topics."
+CODING_CONTEXT = "I am an AI assistant specializing in providing code suggestions."
 
 
 def generate_response(input_text):
@@ -31,7 +28,8 @@ def generate_response(input_text):
         attention_mask = input_ids.ne(tokenizer.pad_token_id).float()
 
     # Generate response
-    output = model.generate(input_ids, attention_mask=attention_mask, max_length=MAX_CHUNK_LENGTH, num_return_sequences=1, do_sample=True, top_k=50, top_p=0.95, num_beams=5, pad_token_id=tokenizer.eos_token_id)
+    output = model.generate(input_ids, attention_mask=attention_mask, max_length=500, num_return_sequences=1,
+                            do_sample=True, top_k=50, top_p=0.95, num_beams=5, pad_token_id=tokenizer.eos_token_id)
 
     # Decode response
     response = tokenizer.decode(output[0], skip_special_tokens=True)
@@ -40,16 +38,14 @@ def generate_response(input_text):
 
 @app.route('/chatbot', methods=['POST'])
 def chatbot():
+    # chat
     data = request.get_json()
     user_input = data['input']
 
     # Generate full response
     full_response = generate_response(user_input)
 
-    # Split response into chunks
-    response_chunks = [full_response[i:i+MAX_CHUNK_LENGTH] for i in range(0, len(full_response), MAX_CHUNK_LENGTH)]
-
-    return jsonify({'response_chunks': response_chunks})
+    return jsonify({'response': full_response})
 
 
 if __name__ == '__main__':
